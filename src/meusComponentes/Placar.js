@@ -28,12 +28,15 @@ export default class Placar extends Component{
 
     render(){
         return(
-            <div>
-            <h1 style={{border:'5px solid blue', padding:'0rem 0.4rem', width:'40px'}}>{this.state.placarAtual}</h1>
-            <h2 style={{padding:'0rem 0.6rem'}}><button onClick={this.aumentar}>+</button>
-            <button onClick={this.diminuir}>-</button></h2>
-            </div>
+                <div>
+                    <div className="visor" style={{textAlign: 'center', border:'2px solid blue', width:'40px'}}>
+                        {this.state.placarAtual}
+                    </div>
+                    <div className="botoes" style={{textAlign: 'center', width:'45px'}}>
+                        <button onClick={this.aumentar}>+</button>
+                        <button onClick={this.diminuir}>-</button>
+                    </div>
+                </div>  
         )
     }
-
 }

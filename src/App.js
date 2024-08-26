@@ -1,12 +1,12 @@
 import Data from "./meusComponentes/Data.js"
-import Placar from "./meusComponentes/Placar.js";
+import Contador from "./meusComponentes/ContadorV2.jsx";
 
 function App() {
   return (
     <div className="App">
       <Data texto="Data e hora atuais " timeZone={-4.00}/>
       <Data texto="Data e hora atuais " timeZone={-2.00}/>
-      <Placar texto=""/>
+      <Contador texto="Jogador 1"/>
     </div>
   );
 }
