@@ -5,31 +5,34 @@ export default class Placar extends Component{
         super();
         this.props = props;
         this.state={
-            placarAtual : new Placar().
+            placarAtual : 0
         }
     }
     componentDidUpdate(){
     }
 
-    aumentar(){
+    aumentar=()=>{
         this.setState({
-            placarAtual: this.placarAtual+1
+            placarAtual: this.state.placarAtual+1
         })  
     }
 
-    diminuir(){
-        this.setState({
-            placarAtual: this.placarAtual-1
-        })  
+    diminuir=()=>{
+        if(this.state.placarAtual>0)
+        {    
+            this.setState({
+                placarAtual: this.state.placarAtual-1
+            })
+        }
     }
 
     render(){
         return(
-            <h1>
-                {this.state.placarAtual}
-            <button onClick={this.state.placarAtual.aumentar}>+</button>
-            <button onClick={this.state.placarAtual.diminuir}>-</button>
-            </h1>
+            <div>
+            <h1 style={{border:'5px solid blue', padding:'0rem 0.4rem', width:'40px'}}>{this.state.placarAtual}</h1>
+            <h2 style={{padding:'0rem 0.6rem'}}><button onClick={this.aumentar}>+</button>
+            <button onClick={this.diminuir}>-</button></h2>
+            </div>
         )
     }
 
